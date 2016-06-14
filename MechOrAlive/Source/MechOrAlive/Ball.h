@@ -9,8 +9,14 @@ UCLASS()
 class MECHORALIVE_API ABall : public AActor
 {
 	GENERATED_BODY()
-	
+
 public:	
+	UPROPERTY(VisibleDefaultsOnly)
+	USphereComponent* Collider;
+
+	UPROPERTY(VisibleDefaultsOnly)
+	UStaticMeshComponent* Mesh;
+
 	// Sets default values for this actor's properties
 	ABall();
 
@@ -21,6 +27,4 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 private:
-	UPROPERTY(BlueprintReadWrite, Category = "Speed", meta = (AllowPrivateAccess = "true"))
-	float Speed;
 };
